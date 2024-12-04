@@ -1,6 +1,6 @@
 name: Playwright Tests
 on:
-  pull:
+  push:
     branch: [ main ]
   pull_request:
     branches: [ main ]
