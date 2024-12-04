@@ -3,12 +3,12 @@ import { test,chromium, expect } from '@playwright/test';
 test('test', async () => {
   const browser = await chromium.launch({
     channel: 'chrome', // Use Google Chrome
-    headless: false, // Show browser GUI
+    headless: true, // Show browser GUI
   });
 
   // Create a new context with video recording enabled
   const context = await browser.newContext({
-    recordVideo: { dir: 'videos/' }, // Directory to save recorded videos
+    // recordVideo: { dir: 'videos/' }, // Directory to save recorded videos
   });
 
   // Create a new page in the context
