@@ -1,12 +1,14 @@
 name: Playwright Tests
 on:
+  pull:
+    branch: [ main ]
   pull_request:
     branches: [ main ]
-  schedule:
-    - cron: '15 4 * * 1-5'
+  # schedule:
+  #   - cron: '15 4 * * 1-5'
 jobs:
   test:
-    timeout-minutes: 120
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
