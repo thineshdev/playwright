@@ -1,4 +1,15 @@
 import { test,chromium, expect } from '@playwright/test';
+import { PlaywrightTestConfig } from '@playwright/test';
+
+const config: PlaywrightTestConfig = {
+  use: {
+    trace: 'on', // Always record a trace
+    video: 'retain-on-failure', // Keep video only on failures
+    screenshot: 'only-on-failure', // Take screenshots only on failures
+  },
+};
+
+export default config;
 
 test('test', async () => {
   const browser = await chromium.launch({
